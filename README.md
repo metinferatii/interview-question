@@ -14,10 +14,14 @@ The active and inactive users should be sorted internally by user id.
 
 For example:
 
-User id name status
+### User id name status
+
 3 Peter Parker Active
+
 5 Tony Stark  Active
+
 1 Steve Rogers Inactive
+
 2 Bruce Banner Inactive
 
 ## Available Scripts
