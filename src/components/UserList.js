@@ -5,8 +5,9 @@ function UserList() {
   const [isLoading, setIsLoading] = useState(false);
   const [users, setusers] = useState([]);
 
+  //fetching data from the api function
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true); 
     fetch("https://gorest.co.in/public/v2/users")
       .then((res) => res.json())
       .then(
@@ -22,11 +23,11 @@ function UserList() {
   }, []);
 
   const sortedUserByStatus = users
-    .sort((a, b) => a.id - b.id)
-    .sort((a, b) => a.status.localeCompare(b.status));
+    .sort((a, b) => a.id - b.id) //we use this function to sort the users by id
+    .sort((a, b) => a.status.localeCompare(b.status)); //we use this function to sort the users by activity status
 
-  if (isLoading) return <div>Loading..</div>;
-  if (!isLoading && error) return <div>Error</div>;
+  if (isLoading) return <div>Loading..</div>; //put out loading while loading
+  if (!isLoading && error) return <div>Error</div>; //put out error in case it fails
   return (
     <div>
       <table>
